@@ -1,0 +1,39 @@
+.logo {
+    width: 300px;
+    float: left;
+    height: 80px;
+}
+.text {
+    padding-left: 70px;
+    margin-left:200px;
+    color: #27703A;
+    text-transform: uppercase;
+    line-height: 80px;
+}
+input {
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+td {
+    width: 200px;
+}
+th {
+    text-align: left;
+    width: 200px;
+}
+select{
+    margin-left: 120px;
+}
+.main{
+    margin-top: 5px;
+    height: 300px;
+    width: 100%;
+    border: 1px solid black;
+    overflow: scroll;
+}
+.main2{
+    height: 250px;
+    width: 100%;
+    border: 1px solid black;
+    overflow: scroll;
+}

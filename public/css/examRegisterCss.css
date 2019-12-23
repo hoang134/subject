@@ -1,0 +1,31 @@
+.logo {
+	width: 300px;
+	float: left;
+	height: 80px;
+}
+.text {
+	padding-left: 70px;
+
+	margin-left:200px;
+    color: #27703A;
+    text-transform: uppercase;
+    line-height: 80px;
+}
+input {
+	margin-bottom: 5px;
+    margin-left: 5px;
+}
+td {
+	width: 200px;
+
+}
+th {
+
+width: 200px;
+
+}
+h3 {
+    font-size: 30px;
+    text-align: center;
+}
+
