@@ -94,5 +94,5 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/admin-subject.js') }}"></script>
+    <script src="{{ secure_asset('js/admin-subject.js') }}"></script>
 @endsection

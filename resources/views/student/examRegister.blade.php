@@ -2,7 +2,7 @@
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/examRegisterCss.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/examRegisterCss.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
@@ -61,7 +61,7 @@
         </table>
     </div>
 </div>
-<script type="text/javascript" src="{{ asset('js/examRegisterJs.js') }}"></script>
+<script type="text/javascript" src="{{ secure_asset('js/examRegisterJs.js') }}"></script>
 <button type="button" class="btn btn-primary" style="margin-left: 920px" onclick="Export2Doc()">XUẤT PHIẾU BÁO DỰ THI  </button>
 
 </body>

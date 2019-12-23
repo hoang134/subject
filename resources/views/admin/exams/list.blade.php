@@ -143,5 +143,5 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/admin-exam.js') }}"></script>
+    <script src="{{ secure_asset('js/admin-exam.js') }}"></script>
 @endsection

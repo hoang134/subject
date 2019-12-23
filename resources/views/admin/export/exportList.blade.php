@@ -2,7 +2,7 @@
 @section('title', 'Export')
 
 @section('content')
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/exportListExam.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/exportListExam.css') }}">
     <meta name="subjectName" content="<?= $exams->subject->name ?>">
     <body id="body">
 
@@ -60,5 +60,5 @@
 @endsection
 
 @section('script')
-    <script type="text/javascript" src="{{ asset('js/ExportListExam.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('js/ExportListExam.js') }}"></script>
 @endsection
