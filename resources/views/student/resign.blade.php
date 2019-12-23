@@ -2,20 +2,20 @@
 <html>
 <head>
     <title>Subject Register</title>
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/cssMain.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/cssMain.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script type="text/javascript" src="http://www.prthuonghieu.com/js-noel/snow.mini.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src={{ secure_asset("js/noel/haloRegister.js") }}></script>
+    <script src={{ asset("js/noel/haloRegister.js") }}></script>
 </head>
 <body>
 <div class="heade">
     <div class="logo">
         <a href="">
-            <img src="{{ secure_asset('image/logo.png') }}">
+            <img src="{{ asset('image/logo.png') }}">
         </a>
     </div>
     <div class="text">
@@ -113,7 +113,7 @@
     Webmaster: support@vnu.edu.vn
     <br>
 </div>
-<script type="text/javascript" src="{{ secure_asset('js/mainJs.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/mainJs.js') }}"></script>
 </body>
 </html>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="{{ secure_asset('css/cssIndex.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/cssIndex.css') }}">
 
 </head>
 
@@ -10,7 +10,7 @@
 	<div class="heade">
 		<div class="logo">
 			<a href="">
-				<img src="{{ secure_asset('image/logo.png') }}">
+				<img src="{{ asset('image/logo.png') }}">
 			</a>
 		</div>
 		<div class="text">
