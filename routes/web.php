@@ -17,7 +17,6 @@
 //});
 
 // Login
-use App\Exam;
 
 Route::get('/', 'AuthController@index');
 Route::post('login', 'AuthController@postLogin');
