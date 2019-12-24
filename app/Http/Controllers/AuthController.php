@@ -35,10 +35,11 @@ class AuthController extends Controller
 
         $credentials = $request->only('username', 'password');
         if (Auth::attempt($credentials)) {
-            // Authentication passed...
+            // Kiểm tra xem có phải admin không?
             if ($credentials['username'] == 'admin') {
                 return redirect('/admin');
             }
+            // Trường hợp khi là student
             return redirect('/registration');
         }
         return redirect("/");

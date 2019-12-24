@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -56,10 +59,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
-        $user->subject_id = $user->subject_id;
-        $user->time = $request->get('time');
-        $user->room = $request->get('room');
-        $user->quantity = $request->get('quantity');
+        $user->password = Hash::make($request->get('password'));
         $user->save();
         return response('Ok', 200);
     }
@@ -74,5 +74,11 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->delete();
+    }
+
+    public function profile()
+    {
+        $user = Auth::user();
+        return view('profile', compact('user'));
     }
 }

@@ -2,20 +2,20 @@
 <html>
 <head>
     <title>Subject Register</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/cssMain.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/cssMain.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script type="text/javascript" src="http://www.prthuonghieu.com/js-noel/snow.mini.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src={{ asset("js/noel/haloRegister.js") }}></script>
+    <script src={{ secure_asset("js/noel/haloRegister.js") }}></script>
 </head>
 <body>
 <div class="heade">
     <div class="logo">
         <a href="">
-            <img src="{{ asset('image/logo.png') }}">
+            <img src="{{ secure_asset('image/logo.png') }}">
         </a>
     </div>
     <div class="text">
@@ -33,7 +33,7 @@
             <input type="submit" value="Tìm Kiếm">
         </form>
         <a href="/logout"><button class="btn btn-danger" style="float: right; margin-bottom: 5px; "> Đăng xuất</button></a>
-        <h6 style="float: right;margin-right: 50px "><?= \Illuminate\Support\Facades\Auth::user()->name ?></h6>
+        <h6 style="float: right;margin-right: 50px "><a href="/profile"><?= \Illuminate\Support\Facades\Auth::user()->name ?></a></h6>
 
 
     </div>
@@ -113,97 +113,10 @@
     Webmaster: support@vnu.edu.vn
     <br>
 </div>
-<script type="text/javascript" src="{{ asset('js/mainJs.js') }}"></script>
+<script type="text/javascript" src="{{ secure_asset('js/mainJs.js') }}"></script>
 </body>
 </html>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-
-    $('.btnSubject').click(function (e) {
-        var check = document.getElementById('error').innerHTML;
-        if(check == "đăng ký thành công") {
-            var id = $(this).val();
-            var quantity = $(this).parent().parent().children()[5].innerText;
-
-            $.ajax({
-                url: '/check-quantity/' + id,
-                method: 'GET'
-            }).done(function (res) {
-                console.log("số người đã đăng ký  "+res);
-                if (res < quantity) {
-                    $.ajax({
-                        url: '/registration',
-                        method: 'POST',
-                        data: {
-                            examId: id
-                        }
-                    }).done(function (res) {
-                        loadSubjectRegister();
-                    }).fail(function (err) {
-                        console.log(err);
-                    });
-                } else {
-                    document.getElementById('error').style.color = "#ff0000";
-                    document.getElementById('error').innerHTML = "Phòng thi đã đầy";
-                }
-            }).fail(function (err) {
-                console.log(err);
-            });
-
-
-        }
-    });
-
-    $(document).on('click','.btnDelete', function () {
-        var id = $(this).val();
-        $.ajax({
-            url: '/registration',
-            method:'DELETE',
-            data: {
-                examId: id,
-            }
-        }).done(function (res) {
-            loadSubjectRegister();
-            console.log(res);
-        }).fail(function (err) {
-            console.log(err);
-        })
-    });
-
-    $(document).ready(function () {
-        loadSubjectRegister();
-    });
-
-    function loadSubjectRegister() {
-        $.ajax({
-            url: '/subject-register',
-            method: 'GET',
-        }).done(function (res) {
-            console.log(res);
-            $('#subjectRegister').empty();
-            $.each(res, function( index, value ) {
-                $('#subjectRegister').append('<tr>\n' +
-                    '                    <th scope="row">' + (index + 1) + '</th>\n' +
-                    '                    <td>' + value.subject.name + '</td>\n' +
-                    '                    <td class="subjectCode">' + value.subject.code + '</td>\n' +
-                    '                    <td  class="subjectTimes">' + value.time + '</td>\n' +
-                    '                    <td>' + value.room + '</td>\n' +
-                    '                    <td>' + value.quantity + '</td>\n' +
-                    '                    <td>\n' +
-                    '                        <button class="btnDelete btn btn-danger" value="' + value.id + '">Xóa</button>\n' +
-                    '                    </td>\n' +
-                    '                </tr>')
-            });
-
-        }).fail(function (err) {
-            console.log(err);
-        });
-    }
-</script>
+<script src="{{ secure_asset('js/register.js') }}"></script>
